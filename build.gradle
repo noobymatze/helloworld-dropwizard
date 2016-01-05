@@ -1,0 +1,38 @@
+plugins {
+    id "com.github.johnrengelman.shadow" version "1.2.2"
+}
+
+defaultTasks 'clean', 'build'
+
+task wrapper(type: Wrapper) {
+	gradleVersion = "2.8"
+}
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'application'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+mainClassName = 'com.github.noobymatze.helloworld.HelloWorldApplication'
+
+dependencies {
+    compile 'io.dropwizard:dropwizard-core:0.9.1'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+}
+

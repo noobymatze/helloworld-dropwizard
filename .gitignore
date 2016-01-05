@@ -1,0 +1,12 @@
+# Gradle work directory
+.gradle
+
+# Netbeans gradle directory
+.nb-gradle
+nbproject/
+
+# Build output directories
+/target
+*/target
+/build
+*/build
