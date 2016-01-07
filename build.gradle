@@ -11,6 +11,7 @@ task wrapper(type: Wrapper) {
 apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'application'
+apply plugin: 'com.github.johnrengelman.shadow'
 
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
@@ -18,14 +19,14 @@ targetCompatibility = '1.8'
 
 mainClassName = 'com.github.noobymatze.helloworld.HelloWorldApplication'
 
-dependencies {
-    compile 'io.dropwizard:dropwizard-core:0.9.1'
-}
-
 jar {
     manifest {
         attributes 'Main-Class': mainClassName
     }
+}
+
+dependencies {
+    compile 'io.dropwizard:dropwizard-core:0.9.1'
 }
 
 repositories {
