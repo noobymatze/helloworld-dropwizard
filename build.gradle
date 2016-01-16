@@ -1,6 +1,12 @@
-plugins {
-    id "com.github.johnrengelman.shadow" version "1.2.2"
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.2'
+    }
 }
+
 
 defaultTasks 'clean', 'build'
 
@@ -13,8 +19,8 @@ apply plugin: 'maven'
 apply plugin: 'application'
 apply plugin: 'com.github.johnrengelman.shadow'
 
-sourceCompatibility = '1.8'
-targetCompatibility = '1.8'
+sourceCompatibility = '1.7'
+targetCompatibility = '1.7'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 mainClassName = 'com.github.noobymatze.helloworld.HelloWorldApplication'
@@ -23,6 +29,12 @@ jar {
     manifest {
         attributes 'Main-Class': mainClassName
     }
+}
+
+shadowJar {
+  mergeServiceFiles()
+  exclude 'META-INF/*.DSA'
+  exclude 'META-INF/*.RSA'
 }
 
 dependencies {
