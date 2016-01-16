@@ -12,7 +12,7 @@ public class HelloWorldResource {
 
     @GET
     public String hello() {
-        return "Hello World!";
+        return "42";
     }
 
 }
