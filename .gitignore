@@ -1,6 +1,10 @@
 # Gradle work directory
 .gradle
 
+# Jenkins stuff
+jenkins.war
+.jenkins/
+
 # Netbeans gradle directory
 .nb-gradle
 nbproject/
