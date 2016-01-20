@@ -1,5 +1,6 @@
 package com.github.noobymatze.helloworld;
 
+import com.github.noobymatze.helloworld.health.HelloWorldHealthCheck;
 import com.github.noobymatze.helloworld.resources.HelloWorldResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Environment;
@@ -13,5 +14,6 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
     @Override
     public void run(HelloWorldConfiguration configuration, Environment environment) throws Exception {
         environment.jersey().register(new HelloWorldResource());
+        environment.healthChecks().register("Is running", new HelloWorldHealthCheck());
     }
 }
