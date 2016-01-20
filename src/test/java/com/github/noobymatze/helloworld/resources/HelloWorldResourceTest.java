@@ -12,7 +12,7 @@ public class HelloWorldResourceTest {
     @Test
     public void testHello() {
         HelloWorldResource resource = new HelloWorldResource();
-        String expResult = "Microservices you will learn";
+        String expResult = "42";
         String result = resource.hello();
         assertEquals(expResult, result);
     }

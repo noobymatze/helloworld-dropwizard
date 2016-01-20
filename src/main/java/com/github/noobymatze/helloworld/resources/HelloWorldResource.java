@@ -12,7 +12,7 @@ public class HelloWorldResource {
 
     @GET
     public String hello() {
-        return "Microservices you will learn";
+        return "42";
     }
 
 }
